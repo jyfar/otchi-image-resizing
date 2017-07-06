@@ -14,7 +14,6 @@ import java.util.regex.Pattern;
 
 import javax.imageio.ImageIO;
 
-import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.events.S3Event;
@@ -27,8 +26,8 @@ import com.amazonaws.services.s3.model.S3Object;
 
 public class ResizeFunctionHandler implements
         RequestHandler<S3Event, String> {
-    private static final float MAX_WIDTH = 100;
-    private static final float MAX_HEIGHT = 100;
+    private static final float MAX_WIDTH = 526;
+    private static final float MAX_HEIGHT = 526;
     private final String JPG_TYPE = (String) "jpg";
     private final String JPG_MIME = (String) "image/jpeg";
     private final String PNG_TYPE = (String) "png";
@@ -45,7 +44,7 @@ public class ResizeFunctionHandler implements
             srcKey = URLDecoder.decode(srcKey, "UTF-8");
 
             String dstBucket = srcBucket + "-resized";
-            String dstKey = "resized-" + srcKey;
+            String dstKey = srcKey;
 
             // Sanity check: validate that source and destination are different
             // buckets.

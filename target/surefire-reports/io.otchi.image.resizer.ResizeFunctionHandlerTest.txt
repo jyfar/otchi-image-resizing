@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: io.otchi.image.resizer.ResizeFunctionHandlerTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.422 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.703 sec
